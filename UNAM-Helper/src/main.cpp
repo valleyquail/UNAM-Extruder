@@ -1,11 +1,10 @@
 #include <Arduino.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "extruder_menus.h"
+#include "menu_system.h"
 #include "../include/pin_definitions.h"
-#include "actions.h"
 
-MenuNav menuNav = MenuNav();
+MenuSystem menuSys = MenuSystem();
 
 void setup()
 {
@@ -17,13 +16,12 @@ void setup()
         Serial.println(i);
     }
 
-    menuNav.initDisplay();
+    menuSys.initDisplay();
 
-    initPins();
     Serial.println("initialized");
 }
 
 void loop()
 {
-    menuNav.poll();
+    menuSys.poll();
 }

@@ -11,4 +11,10 @@
 #include <menuIO/serialOut.h>
 #include "../../include/pin_definitions.h"
 
+
+extern Menu::menu pultruderMain;
+extern Menu::menu pultruderSettings;
+extern Menu::menu pultruderCalibration;
+
+
 #endif

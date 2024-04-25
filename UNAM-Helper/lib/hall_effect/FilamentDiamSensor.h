@@ -9,27 +9,19 @@
 #include <Arduino.h>
 
 
-class FilamentDiamSensor {
+
+//Use two ADC pins to get an average value between the sensors since the rp2040 does not have accurate ADCs
+
+//Calibration factor for the sensor
+//This needs to be hardcoded since it will be specific to the output of the hall effect sensors
+//This handles the scaling factor from the analog to the actual diameter
 
 
-private:
-    //Use two ADC pins to get an average value between the sensors since the rp2040 does not have accurate ADCs
-    int adc1;
-    int adc2;
+void initFilamentDiamSensor(int pin, int pin2);
 
-    //Calibration factor for the sensor
-    //This needs to be hardcoded since it will be specific to the output of the hall effect sensors
-    //This handles the scaling factor from the analog to the actual diameter
-    float calibartionFactor = 1.0;
-    float getRawValue();
-    float movingAverage(float *array, int n);
-    float filamentWindingSpeed = 0.0;
-public:
-    FilamentDiamSensor(int pin, int pin2);
-    void setFilamentWindingSpeed(float speed);
-    float getDiameter();
-    String getDiameterString();
-};
+float movingAverage(float *array, int n);
+
+float getDiameter();
 
 
 #endif //UNAM_HELPER_FILAMENTDIAMSENSOR_H

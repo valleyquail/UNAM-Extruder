@@ -6,7 +6,7 @@
 #define UNAM_SKR_STEPPER_CONTROL_H
 
 #include "../../include/pin_definitions.h"
-#include <Stepper
+#include <TMC2209.h>
 
 class StepperController {
 

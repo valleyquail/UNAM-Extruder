@@ -4,8 +4,7 @@
 #include "extruder_menus.h"
 #include "pultruder_menus.h"
 
-enum FILAMENT_TYPES
-{
+enum FILAMENT_TYPES {
     PLA,
     PETG,
     ABS,
@@ -19,19 +18,21 @@ enum FILAMENT_TYPES
  * programming since it wraps the macros and objects in a class
  *
  */
-class MenuSystem
-{
+class MenuSystem {
 private:
     void setFilamentType();
 
 public:
     MenuSystem();
+
     FILAMENT_TYPES getFilamentType();
-    void initDisplay();
-    void poll();
-    void updateDisplay(char *text);
+
+    static void initDisplay();
+
+    static void poll();
+
+    static void updateDisplay(String text);
 };
 
-extern MenuSystem menuSys;
 
 #endif

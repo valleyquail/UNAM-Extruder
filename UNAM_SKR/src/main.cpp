@@ -1,18 +1,18 @@
 #include <Arduino.h>
+#include "../lib/pid_control/pid_controller.h"
+#include "../lib/steppers/stepper_control.h"
+#include "../lib/pico_uart/pico_uart.h"
 
-// put function declarations here:
-int myFunction(int, int);
+PIDController pultruderPID = PIDController();
+PIDController extruderPID = PIDController();
+StepperController pultruderStepper = StepperController();
+StepperController extruderStepper = StepperController();
+
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
 }

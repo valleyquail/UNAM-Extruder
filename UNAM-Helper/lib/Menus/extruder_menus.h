@@ -14,6 +14,8 @@
 #define SOFT_DEBOUNCE_MS 100
 
 extern Menu::menu extruderDisplay;
-
+extern Menu::menu extruderSettings;
+extern Menu::menu extruderCalibration;
+extern Menu::menu extruderFilament;
 
 #endif

@@ -9,8 +9,14 @@
 //Calibration factor for the sensor
 //This needs to be hardcoded since it will be specific to the output of the hall effect sensors
 //This handles the scaling factor from the analog to the actual diameter
-float calibartionFactor = 1.0;
+float scalingFactor = 1.0;
 float avgReading;
+
+uint16_t calibration_one;
+uint16_t calibration_two;
+
+float drill_diam_one;
+float drill_diam_two;
 
 
 float getRawValue();
@@ -29,7 +35,7 @@ void updateMovingAverage(float reading) {
 
 float getDiameter() {
     float rawValue = getRawValue();
-    float diameter = rawValue * calibartionFactor;
+    float diameter = rawValue * scalingFactor;
     updateMovingAverage(diameter);
     return diameter;
 }

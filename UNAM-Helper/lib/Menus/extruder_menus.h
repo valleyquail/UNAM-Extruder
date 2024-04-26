@@ -10,7 +10,7 @@
 #include <menuIO/serialIn.h>
 #include <menuIO/serialOut.h>
 
-#define MAX_DEPTH 2
+#define MAX_DEPTH 5
 #define SOFT_DEBOUNCE_MS 100
 
 extern Menu::menu extruderDisplay;

@@ -23,5 +23,7 @@ float movingAverage(float *array, int n);
 
 float getDiameter();
 
+void calibrate();
+
 
 #endif //UNAM_HELPER_FILAMENTDIAMSENSOR_H
